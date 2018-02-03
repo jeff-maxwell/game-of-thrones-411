@@ -1,0 +1,15 @@
+<div *ngIf="selectedPerson" class="text-center info">
+  <div *ngIf="selectedPerson.data.imageLink" class="profile-pic">
+    <img src="https://api.got.show{{selectedPerson.data.imageLink}}">
+  </div>
+  <h1 >{{selectedPerson.data.name}}</h1>
+  <h3>{{selectedPerson.data.house}}</h3>
+  <div *ngIf="selectedPerson.data.books" class="books">
+    <div *ngFor="let book of books" class="book">
+      <h5>{{book}}</h5>
+      <div class="book-cover">
+        <img src="../../../assets/book-pictures/{{book}}.jpg">
+      </div>
+    </div>
+  </div>
+</div>

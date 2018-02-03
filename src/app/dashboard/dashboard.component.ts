@@ -13,7 +13,7 @@ export class DashboardComponent implements OnInit {
   }
 
   onClickPeople(): void {
-    console.log("clicked");
+    console.log('clicked');
     this.router.navigate(['people']);
   }
 }
