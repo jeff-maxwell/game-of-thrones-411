@@ -13,13 +13,20 @@ import { WelcomeComponent } from './welcome/welcome.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { PeopleDetailComponent } from './people/people-detail/people-detail.component';
 import { SpinnerComponent } from './shared/spinner/spinner.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   imports: [
     BrowserModule,
     HttpModule,
     FormsModule,
-    //import RouterModule here
+    RouterModule.forRoot([
+      { path: '', component: WelcomeComponent },
+      { path: 'dashboard', component: DashboardComponent },
+      { path: 'people', component: PeopleComponent },
+      { path: 'people/:id', component: PeopleDetailComponent },
+      { path: '**', component: NotFoundComponent }
+    ])
   ],
   declarations: [
     AppComponent,
