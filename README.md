@@ -1,6 +1,6 @@
 # GameOfThrones411
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.4.3.
+This project was forked from Patrick Hartley project `https://github.com/patch321/game-of-thrones-411`
 
 ## Development server
 
