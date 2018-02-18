@@ -14,6 +14,6 @@ export class DashboardComponent implements OnInit {
 
   onClickPeople(): void {
     console.log("Let's go to People page!!!");
-    this.router.navigate(['/people']);
+    this.router.navigate(['/people/list']);
   }
 }

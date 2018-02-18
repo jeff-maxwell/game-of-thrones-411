@@ -1,7 +1,8 @@
 import { Observable } from 'rxjs/Observable';
-import { Http } from '@angular/http';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { Person } from '../person';
+import { PeopleService } from '../people.service';
 
 @Component({
   selector: 'app-people-detail',
@@ -10,19 +11,22 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class PeopleDetailComponent implements OnInit {
 
-  constructor(private htttp: Http, private activatedRoute: ActivatedRoute) { }
+  constructor(private peopleService: PeopleService, private activatedRoute: ActivatedRoute) { }
 
   private books: any;
-  private selectedPerson: any;
+  selectedPerson: Person;
 
   ngOnInit() {
-    let personId = this.activatedRoute.snapshot.params['id'];
-    this.getPerson(personId).subscribe(person => {this.selectedPerson = person; this.books = person.data.books});
-  }
+    const personId = this.activatedRoute.snapshot.params['id'];
 
-  getPerson(id:number):Observable<any>{
-    return this.htttp.get('https://api.got.show/api/characters/byId/' + id)
-      .map(res => res.json())
+    this.peopleService.getPerson(personId)
+        .subscribe(
+          (person: Person) => {
+            this.selectedPerson = person;
+            this.books = person.books;
+          },
+          (err: any) => console.log(err),
+          () => console.log('Person Record Received')
+        );
   }
-
 }

@@ -18,7 +18,7 @@ export class PlacesComponent implements OnInit {
       .subscribe(
         places => this.places = places,
         err => console.log(err)
-      )
+      );
   }
 
 }

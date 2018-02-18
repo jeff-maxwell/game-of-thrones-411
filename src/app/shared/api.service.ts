@@ -1,21 +1,21 @@
 import { Injectable } from '@angular/core';
-import { Http } from '@angular/http';
-import { Observable } from 'rxjs/Observable'
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
+
+import { Person } from '../people/person';
 
 @Injectable()
 export class ApiService {
 
-  constructor(private http: Http) { }
+  constructor(private http: HttpClient) { }
 
-  public getCharacters(): Observable<any> {
-    return this.http.get('https://api.got.show/api/characters/')
-      .map(res => res.json());
+  public getCharacters(): Observable<Person[]> {
+    return this.http.get<Person[]>('https://api.got.show/api/characters/');
   }
 
   public getCities(): Observable<any> {
-    return this.http.get('https://api.got.show/api/cities')
-      .map(res => res.json())
+    return this.http.get('https://api.got.show/api/cities');
   }
 
 }

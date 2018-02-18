@@ -11,6 +11,12 @@
         </div>
         <div *ngIf="characters" class="characters">
             <div class="row">
+                <div class="card-deck">
+                    <div *ngFor="let character of characters">
+                        <app-people-card [person]="character"></app-people-card>
+                    </div>
+                </div>
+                <!--
                 <div *ngFor="let character of characters | searchFilter : searchString " class="character-profile-card" style="cursor:pointer;" [routerLink]="['/people/', character._id]">
                     <div class="profile-pic">
                         <img *ngIf="character.imageLink" src="https://api.got.show{{character.imageLink}}" alt="character image">
@@ -20,6 +26,7 @@
                         <p class="profile-text">{{character.name}}</p>
                     </div>
                 </div>
+                -->
             </div>
         </div>
     </div>

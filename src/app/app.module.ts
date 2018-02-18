@@ -1,30 +1,31 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { ApiService } from './shared/api.service';
 import { AppComponent } from './app.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { PeopleComponent } from './people/people.component';
 import { PlacesComponent } from './places/places.component';
 import { SearchFilterPipe } from './shared/searchFilter.pipe';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { NotFoundComponent } from './not-found/not-found.component';
-import { PeopleDetailComponent } from './people/people-detail/people-detail.component';
-import { SpinnerComponent } from './shared/spinner/spinner.component';
 import { RouterModule } from '@angular/router';
+import { MenuComponent } from './menu/menu.component';
+import { PeopleModule } from './people/people.module';
+import { ApiInterceptor } from './shared/api.interceptor';
 
 @NgModule({
   imports: [
     BrowserModule,
-    HttpModule,
+    HttpClientModule,
     FormsModule,
+    PeopleModule,
     RouterModule.forRoot([
       { path: '', component: WelcomeComponent },
       { path: 'dashboard', component: DashboardComponent },
-      { path: 'people', component: PeopleComponent },
-      { path: 'people/:id', component: PeopleDetailComponent },
+      { path: 'people', loadChildren: 'app/people/people.module#PeopleModule' },
       { path: '**', component: NotFoundComponent }
     ])
   ],
@@ -32,17 +33,16 @@ import { RouterModule } from '@angular/router';
     AppComponent,
     DashboardComponent,
     WelcomeComponent,
-    PeopleComponent,
     SearchFilterPipe,
     PlacesComponent,
     NotFoundComponent,
-    PeopleDetailComponent,
-    SpinnerComponent
+    MenuComponent
   ],
-  exports: [
-    
-  ],  
-  providers: [ ApiService ],
+  exports: [ ],
+  providers: [
+    ApiService,
+    { provide: HTTP_INTERCEPTORS, useClass: ApiInterceptor, multi: true }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

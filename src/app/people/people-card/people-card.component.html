@@ -1,0 +1,11 @@
+<div class="card bg-light mb-3" style="width: 250px">
+    <img class="card-img-top" style="max-height:200px" *ngIf="person.imageLink" src="https://api.got.show{{person.imageLink}}" alt="character image">
+    <img class="card-img-top" *ngIf="!person.imageLink" src="../../assets/people-pictures/no-image.png" alt="character image not found">
+    <div class="card-body">
+        <h5 class="card-title profile-text">{{person.name}}</h5>
+        <p class="card-text profile-text">{{person.house}}</p>
+    </div>
+    <div class="card-footer">
+        <a [routerLink]="['/people/detail/', person._id]" class="btn btn-primary">Details</a>
+    </div>
+</div>

@@ -1,0 +1,62 @@
+* {
+    background-color: #2F2F2F
+}
+
+@font-face {
+    font-family: Game of Thrones;
+    src: url(../../../assets/GameOfThrones.ttf);
+}
+
+h1 {
+    font-family: 'Game of Thrones';
+    color: white;
+}
+
+.title {
+    margin-top: 30px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.characters {
+    display: inline-flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+}
+
+.character-profile-card {
+    margin: 5px 5px;
+    border: 0;
+    width: 125px
+}
+
+.profile-pic {
+    width: 125px;
+}
+
+.search-container {
+    width: 100%;
+}
+
+.search-box {
+    width: 80%;
+    margin: 20px auto;
+    background-color: white;
+}
+
+.profile-pic>img {
+    width: 100%;
+    height: 100%;
+}
+
+.profile-body {
+    padding: 10px;
+    min-height: 50px;
+    background-color: white;
+}
+
+.profile-text {
+    font-family: 'Game of Thrones';
+    color: white;
+    overflow-wrap: break-word;
+}
