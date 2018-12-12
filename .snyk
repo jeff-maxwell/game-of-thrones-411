@@ -4,22 +4,22 @@ version: v1.12.0
 ignore:
   'npm:ejs:20161128':
     - masonry > ejs:
-        reason: None given
-        expires: '2018-11-24T18:33:57.966Z'
+        reason: No update
+        expires: '2019-01-11T13:44:58.989Z'
   'npm:ejs:20161130':
     - masonry > ejs:
-        reason: None given
-        expires: '2018-11-24T18:33:57.968Z'
+        reason: No update
+        expires: '2019-01-11T13:44:58.990Z'
   'npm:ejs:20161130-1':
     - masonry > ejs:
-        reason: None given
-        expires: '2018-11-24T18:33:57.968Z'
+        reason: No update
+        expires: '2019-01-11T13:44:58.990Z'
   'npm:http-proxy-agent:20180406':
     - ng2-filter-pipe > typings > typings-core > popsicle-proxy-agent > http-proxy-agent:
-        reason: None given
-        expires: '2018-11-24T18:33:57.968Z'
+        reason: No update
+        expires: '2019-01-11T13:44:58.990Z'
   'npm:https-proxy-agent:20180402':
     - ng2-filter-pipe > typings > typings-core > popsicle-proxy-agent > https-proxy-agent:
-        reason: None given
-        expires: '2018-11-24T18:33:57.968Z'
+        reason: No update
+        expires: '2019-01-11T13:44:58.990Z'
 patch: {}
