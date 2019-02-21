@@ -22,7 +22,7 @@
     "@angular/platform-browser-dynamic": "^5.2.5",
     "@angular/platform-server": "^5.2.5",
     "@angular/router": "^5.2.5",
-    "bootstrap": "^4.1.2",
+    "bootstrap": "^4.3.1",
     "core-js": "^2.4.1",
     "masonry": "0.0.2",
     "ng2-filter-pipe": "^0.1.10",
