@@ -1,9 +1,8 @@
 # GameOfThrones411
 
-This project was forked from Patrick Hartley project (https://github.com/patch321/game-of-thrones-411) 
-and was used for the Free Code Camp OKC Examples.  Angular 5 - Components, Services and Data class I taught on Feb. 18th, 2018.
+This project was forked from Patrick Hartley project (https://github.com/patch321/game-of-thrones-411) and was used for the Free Code Camp OKC Examples.  Angular 5 - Components, Services and Data class I taught on Feb. 18th, 2018.
 
-The class is available on Twitch Techlahoma channel (https://www.twitch.tv/videos/230418832)
+The class is available on [Twitch Techlahoma channel](https://www.twitch.tv/videos/230418832) or on [YouTube](https://www.youtube.com/watch?v=tKmGP1hZ6_0)
 
 ## Development server
 
