@@ -5,7 +5,7 @@ import { Person } from './person';
 
 @Injectable()
 export class PeopleService {
-baseURL = 'https://api.got.show/api/characters/';
+baseURL = 'https://api.got.show/api/show/characters/';
 
   constructor(private http: HttpClient) { }
 
@@ -13,8 +13,8 @@ baseURL = 'https://api.got.show/api/characters/';
     return this.http.get<Person[]>(this.baseURL);
   }
 
-  getPerson(id: number): Observable<Person> {
-    return this.http.get<Person>(this.baseURL + 'byId/' + id);
+  getPerson(slug: string): Observable<Person> {
+    return this.http.get<Person>(this.baseURL + 'bySlug/' + slug);
   }
 
   public getProgressData() {

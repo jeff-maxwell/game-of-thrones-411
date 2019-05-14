@@ -16,17 +16,6 @@
                         <app-people-card [person]="character"></app-people-card>
                     </div>
                 </div>
-                <!--
-                <div *ngFor="let character of characters | searchFilter : searchString " class="character-profile-card" style="cursor:pointer;" [routerLink]="['/people/', character._id]">
-                    <div class="profile-pic">
-                        <img *ngIf="character.imageLink" src="https://api.got.show{{character.imageLink}}" alt="character image">
-                        <img *ngIf="!character.imageLink" src="../../assets/people-pictures/no-image.png" alt="character image not found">
-                    </div>
-                    <div class="profile-body text-center">
-                        <p class="profile-text">{{character.name}}</p>
-                    </div>
-                </div>
-                -->
             </div>
         </div>
     </div>
